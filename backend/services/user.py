@@ -1,8 +1,8 @@
 from fastapi import HTTPException, status
 from sqlalchemy.orm import Session
 from utilities import auth
-from ..models.user import User
-from ..schemas.user import UserCreate
+from models.user import User
+from schemas.user import UserCreate
 
 
 def create_user(db: Session, user: UserCreate):
