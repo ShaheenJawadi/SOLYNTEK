@@ -1,7 +1,8 @@
 from sqlalchemy.orm import Session
 from fastapi import HTTPException, status
 from models.product import Product
-from schemas.product import ProductCreate, ProductUpdate
+from schemas.product import ProductCreate, ProductUpdate, ProductSearchParams, ProductBase
+from sqlalchemy import or_
 
 
 def get_product(db: Session, product_id: int):
@@ -48,3 +49,41 @@ def delete_product(db: Session, product_id: int):
     db.commit()
 
     return {"success": True}
+
+
+def search_products(
+        db: Session,
+        params: ProductSearchParams,
+):
+    query = db.query(Product)
+
+    if params.search:
+        search_term = f"%{params.search}%"
+        query = query.filter(
+            or_(
+                Product.name.ilike(search_term),
+                Product.description.ilike(search_term)
+            )
+        )
+
+    # category
+    if params.category:
+        query = query.filter(Product.category == params.category)
+
+    #  sorting
+    if params.sort_by:
+        # Get the column to sort by
+        column = getattr(Product, params.sort_by, Product.name)
+
+        # Apply sort order
+        if params.sort_order.lower() == "desc":
+            column = column.desc()
+
+        query = query.order_by(column)
+
+    # pagination
+    total = query.count()
+    query = query.offset((params.page - 1) * params.page_size).limit(params.page_size)
+    products = [ProductBase.from_orm(product) for product in query.all()]
+
+    return products, total
