@@ -5,14 +5,10 @@ from services import product as productService
 from database import get_db
 from schemas.product import Product, ProductCreate, ProductUpdate
 
-
 router = APIRouter(
     prefix="/products",
     tags=["products"],
 )
-
-
-
 
 
 @router.get("/{product_id}", response_model=Product)
@@ -55,4 +51,4 @@ async def delete_product(
         product_id: int,
         db: Session = Depends(get_db),
 ):
-    return productService.delete_product(db=db,product_id=product_id)
+    return productService.delete_product(db=db, product_id=product_id)
