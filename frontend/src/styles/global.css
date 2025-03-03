@@ -1,6 +1,6 @@
 
 :root {
-  --primary-color: #002e5a;
+  --primary-color: #00427f;
   --secondary-color: #FF9F43; 
 }
 
@@ -104,4 +104,77 @@ input, textarea, select, button {
 .auth_page .auth_box .auth_box_title{
   margin-bottom: 10px;
   color: var(--primary-color);
+}
+.auth_page .auth_box .auth_links{
+  color: var(--primary-color);
+  font-size: 15px;
+}
+/* //////////////////////// */
+.form_holder {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.form_holder .submit_btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: var(--secondary-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-self: center;
+  font-weight: 600;
+  text-align: center;
+  justify-content: center;
+  min-width: 40%;
+}
+
+.form_holder .submit_btn:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+
+.form_holder .input_container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form_holder .input_label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #4f4f4f;
+}
+
+.form_holder .input_field {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form_holder .input_field:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.form_holder .input_error {
+  border-color: red;
+}
+
+.form_holder .input_error:focus {
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+.form_holder .error_message {
+  color: red;
+  font-size: 12px;
 }

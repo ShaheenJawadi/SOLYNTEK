@@ -6,7 +6,7 @@ const LoginForm: React.FC = () => {
   const { formik, isLoading } = useAuthForm();
 
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <form onSubmit={formik.handleSubmit} className="form_holder">
       <InputField
         type="email"
         label="Email"
@@ -29,7 +29,10 @@ const LoginForm: React.FC = () => {
       />
 
  
-      <button type="submit" disabled={isLoading}>
+    <div className="auth_links">
+            <a href="/register" className="auth_link">Don't have an account?</a>
+    </div>
+      <button type="submit" className="submit_btn" disabled={isLoading}>
         {isLoading ? "Logging In..." : "Login"}
       </button>
     </form>
