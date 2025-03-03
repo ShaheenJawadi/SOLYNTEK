@@ -1,4 +1,9 @@
 
+:root {
+  --primary-color: #002e5a;
+  --secondary-color: #FF9F43; 
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -28,7 +33,7 @@ a {
 }
 
 a:hover {
-  color: #007bff;
+  color: var(--primary-color);
 }
 
 ul, ol {
@@ -98,4 +103,5 @@ input, textarea, select, button {
 }
 .auth_page .auth_box .auth_box_title{
   margin-bottom: 10px;
+  color: var(--primary-color);
 }
