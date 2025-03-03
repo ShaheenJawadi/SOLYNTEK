@@ -1,4 +1,5 @@
 import { RouteObject } from "react-router-dom";
+import GuardRoute from "./guard";
 
 export const routes: RouteObject[] = [
   {
@@ -15,7 +16,10 @@ export const routes: RouteObject[] = [
   },
   {
     path: "/dashboard",
-    element: <div>Dashboard</div>,
+    element: (
+    <GuardRoute requiredRole="admin">
+      <div>Dashboard</div>
+    </GuardRoute>),
   },
   
 ];
