@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 import { getToken, removeToken } from '../utils/token';
 
 const API_BASE_URL = 'http://localhost:8000/api';
@@ -38,4 +38,24 @@ api.interceptors.response.use(
   }
 );
 
-export default api;
+export const apiService = {
+    get: async <T>(url: string, config?: AxiosRequestConfig) => {
+      const response = await api.get<T>(url, config);
+      return response.data;
+    },
+  
+    post: async <T, D = unknown>(url: string, data: D, config?: AxiosRequestConfig) => {
+      const response = await api.post<T>(url, data, config);
+      return response.data;
+    },
+  
+    put: async <T, D = unknown>(url: string, data: D, config?: AxiosRequestConfig) => {
+      const response = await api.put<T>(url, data, config);
+      return response.data;
+    },
+  
+    delete: async <T>(url: string, config?: AxiosRequestConfig) => {
+      const response = await api.delete<T>(url, config);
+      return response.data;
+    }
+  };
