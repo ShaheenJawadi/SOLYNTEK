@@ -1,6 +1,7 @@
 import { RouteObject } from "react-router-dom";
 import GuardRoute from "./guard";
 import Login from "../pages/login";
+import Register from "../pages/register";
 
 export const routes: RouteObject[] = [
   {
@@ -13,7 +14,7 @@ export const routes: RouteObject[] = [
   },
   {
     path: "/register",
-    element:  <div>register</div>,
+    element:  <Register/>,
   },
   {
     path: "/dashboard",
