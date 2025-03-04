@@ -1,9 +1,9 @@
 import React from "react";
-import { useAuthForm } from "../../hooks/forms/useAuthForm";
+import { useLoginForm } from "../../hooks/forms/useAuthForm";
 import InputField from "../elements/input";
 
 const LoginForm: React.FC = () => {
-  const { formik, isLoading } = useAuthForm();
+  const { formik, isLoading } = useLoginForm();
 
   return (
     <form onSubmit={formik.handleSubmit} className="form_holder">

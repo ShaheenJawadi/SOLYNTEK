@@ -21,7 +21,7 @@ def register(user: user.UserCreate, db: Session = Depends(get_db)):
 
 @router.post("/login", response_model=user.Token)
 def login(
-        form_data: OAuth2PasswordRequestForm = Depends(),
+        form_data: user.UserLogin,
         db: Session = Depends(get_db)
 ):
     user = auth.authenticate_user(db, form_data.username, form_data.password)
@@ -32,6 +32,7 @@ def login(
             headers={"WWW-Authenticate": "Bearer"},
         )
 
-    access_token = auth.create_access_token(data={"sub": user.username})
+    print(user.role)
+    access_token = auth.create_access_token(data={"sub": user.username, "role": user.role})
 
     return {"access_token": access_token, "token_type": "bearer"}

@@ -16,3 +16,12 @@ export interface AuthState {
     USER = 'user',
     ADMIN = 'admin',
   }
+
+
+
+
+  export type registerPayload = {
+    username: string;
+    password: string;
+    email: string;  
+  }

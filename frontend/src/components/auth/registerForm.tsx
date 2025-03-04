@@ -1,9 +1,9 @@
 import React from "react";
-import { useAuthForm } from "../../hooks/forms/useAuthForm";
+import { useRegisterForm } from "../../hooks/forms/useAuthForm";
 import InputField from "../elements/input";
 
 const RegisterForm: React.FC = () => {
-  const { formik, isLoading } = useAuthForm();
+  const { formik, isLoading } = useRegisterForm();
 
   return (
     <form onSubmit={formik.handleSubmit} className="form_holder">
@@ -18,14 +18,14 @@ const RegisterForm: React.FC = () => {
         errorMessage={formik.errors.username}
       />
       <InputField
-        type="username"
-        label="username"
-        name="username"
-        value={formik.values.username}
+        type="email"
+        label="Email"
+        name="email"
+        value={formik.values.email}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        isError={!!(formik.errors.username && formik.touched.username)}
-        errorMessage={formik.errors.username}
+        isError={!!(formik.errors.email && formik.touched.email)}
+        errorMessage={formik.errors.email}
       />
       <InputField
         type="password"
@@ -38,7 +38,7 @@ const RegisterForm: React.FC = () => {
         errorMessage={formik.errors.password}
       />
 
-      <InputField
+   {/*    <InputField
         type="password"
         label="Repeat Password"
         name="password_2"
@@ -47,7 +47,7 @@ const RegisterForm: React.FC = () => {
         onBlur={formik.handleBlur}
         isError={!!(formik.errors.password && formik.touched.password)}
         errorMessage={formik.errors.password}
-      />
+      /> */}
 
       <div className="auth_links">
          
