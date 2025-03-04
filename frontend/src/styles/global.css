@@ -440,3 +440,42 @@ font-size: 14px;
   font-size: 22px;
   cursor: pointer;
 }
+
+
+
+/* ////////////////////////// */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.pagination .pagination-btn {
+  border: none;
+  background: #f0f0f0;
+  color: #333;
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pagination .pagination-btn:hover {
+  background: var(--secondary-color);
+  color: white;
+}
+
+.pagination .pagination-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination .pagination-btn.active {
+  background: var(--primary-color);
+  color: white;
+  font-weight: bold;
+}

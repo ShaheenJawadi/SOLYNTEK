@@ -11,6 +11,7 @@ import {
 import React from "react";
 import InputField from "../components/elements/input";
 import SelectField from "../components/elements/select";
+import Pagination from "../components/elements/pagination";
 
 const Home: React.FC = () => {
   return (
@@ -107,6 +108,10 @@ const Home: React.FC = () => {
              
              
             </div>
+          </div>
+
+          <div>
+          <Pagination currentPage={1} totalPages={10} onPageChange={()=>null} />
           </div>
           </div>
       
