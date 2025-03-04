@@ -10,9 +10,11 @@ import React from "react";
 import InputField from "../components/elements/input";
 import SelectField from "../components/elements/select";
 import Pagination from "../components/elements/pagination";
+import Header from "../components/pages/header";
 
 const Home: React.FC = () => {
   return (
+    <><Header/>
     <div className="filter_page_holder">
       <div className="container">
         <div className="row">
@@ -125,7 +127,7 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div></>
   );
 };
 
