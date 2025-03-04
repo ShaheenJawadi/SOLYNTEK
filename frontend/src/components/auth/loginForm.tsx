@@ -8,14 +8,14 @@ const LoginForm: React.FC = () => {
   return (
     <form onSubmit={formik.handleSubmit} className="form_holder">
       <InputField
-        type="email"
-        label="Email"
-        name="email"
-        value={formik.values.email}
+        type="username"
+        label="Username"
+        name="username"
+        value={formik.values.username}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        isError={!!(formik.errors.email && formik.touched.email)}
-        errorMessage={formik.errors.email}
+        isError={!!(formik.errors.username && formik.touched.username)}
+        errorMessage={formik.errors.username}
       />
      <InputField
         type="password"

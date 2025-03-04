@@ -4,24 +4,24 @@ import { useMutation } from 'react-query';
 import { login  } from '../../services/authService';
  
 const loginValidationSchema = Yup.object({
-  email: Yup.string().email('Invalid email format').required('Email is required'),
+  username: Yup.string().required('username is required'),
   password: Yup.string().min(6, 'Password must be at least 6 characters').required('Password is required'),
 });
 
  
  
 export const useAuthForm = () => {
-  const mutation = useMutation( (data: { email: string, password: string }) => login(data.email, data.password) );
+  const mutation = useMutation( (data: { username: string, password: string }) => login(data.username, data.password) );
 
   const formik = useFormik({
     initialValues: {
-      email: '',
+      username: '',
       password: '', 
     },
     validationSchema:  loginValidationSchema  ,
     onSubmit: async (values) => {
       try { 
-          await mutation.mutateAsync({email:values.email, password: values.password});
+          await mutation.mutateAsync({username:values.username, password: values.password});
           alert('Login Successful');
     
       

@@ -11,21 +11,21 @@ const RegisterForm: React.FC = () => {
         type="text"
         label="Username"
         name="username"
-        value={formik.values.email}
+        value={formik.values.username}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        isError={!!(formik.errors.email && formik.touched.email)}
-        errorMessage={formik.errors.email}
+        isError={!!(formik.errors.username && formik.touched.username)}
+        errorMessage={formik.errors.username}
       />
       <InputField
-        type="email"
-        label="Email"
-        name="email"
-        value={formik.values.email}
+        type="username"
+        label="username"
+        name="username"
+        value={formik.values.username}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        isError={!!(formik.errors.email && formik.touched.email)}
-        errorMessage={formik.errors.email}
+        isError={!!(formik.errors.username && formik.touched.username)}
+        errorMessage={formik.errors.username}
       />
       <InputField
         type="password"
