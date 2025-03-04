@@ -1,31 +1,28 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { useMutation } from 'react-query';
-import { login ,register } from '../../services/authService';
-import { registerPayload } from '../../types/auth.type';
- 
- const loginValidationSchema = Yup.object({
-  username: Yup.string().required('username is required'),
+import { useDispatch } from 'react-redux';
+import { login,register } from '../../store/auth.slice'; 
+import { AppDispatch } from '../../store';
+
+
+const loginValidationSchema = Yup.object({
+  username: Yup.string().required('Username is required'),
   password: Yup.string().min(8, 'Password must be at least 6 characters').required('Password is required'),
 });
 
- 
- 
 export const useLoginForm = () => {
-  const mutation = useMutation( (data: { username: string, password: string }) => login(data.username, data.password) );
+  const dispatch = useDispatch<AppDispatch>();
 
   const formik = useFormik({
     initialValues: {
       username: '',
       password: '', 
     },
-    validationSchema:  loginValidationSchema  ,
+    validationSchema: loginValidationSchema,
     onSubmit: async (values) => {
-      try { 
-          await mutation.mutateAsync({username:values.username, password: values.password});
-          alert('Login Successful');
-    
-      
+      try {
+        await dispatch(login({ username: values.username, password: values.password })).unwrap();
+        alert('Login Successful');
       } catch (error) {
         alert('An error occurred');
       }
@@ -34,28 +31,19 @@ export const useLoginForm = () => {
 
   return {
     formik,
-    isLoading: mutation.isLoading,
+    isLoading: false,  
   };
 };
-
-
  
 
-
-
-
-
-
-const RegiisterValidationSchema = Yup.object({
+const registerValidationSchema = Yup.object({
   username: Yup.string().required('Username is required'),
   email: Yup.string().email('Invalid email format').required('Email is required'),
   password: Yup.string().min(8, 'Password must be at least 6 characters').required('Password is required'),
 });
 
- 
- 
 export const useRegisterForm = () => {
-  const mutation = useMutation( (data: registerPayload) => register(data) );
+  const dispatch = useDispatch<AppDispatch>();
 
   const formik = useFormik({
     initialValues: {
@@ -63,13 +51,11 @@ export const useRegisterForm = () => {
       password: '', 
       email: '',
     },
-    validationSchema:  RegiisterValidationSchema  ,
+    validationSchema: registerValidationSchema,
     onSubmit: async (values) => {
       try { 
-          await mutation.mutateAsync({email:values.email ,username:values.username, password: values.password});
-          alert('register Successful');
-    
-      
+        await dispatch(register({ email: values.email, username: values.username, password: values.password })).unwrap();
+        alert('Registration Successful');
       } catch (error) {
         alert('An error occurred');
       }
@@ -78,6 +64,6 @@ export const useRegisterForm = () => {
 
   return {
     formik,
-    isLoading: mutation.isLoading,
+    isLoading: false, 
   };
 };

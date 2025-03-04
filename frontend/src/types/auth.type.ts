@@ -1,7 +1,8 @@
 export interface AuthState {
     user: User | null;
-    token: string | null;
     isAuthenticated: boolean; 
+    loading: boolean;
+    error: string | null;
   }
   
 
@@ -20,8 +21,13 @@ export interface AuthState {
 
 
 
-  export type registerPayload = {
+  export type LoginCredentials = {
+    username: string;   
+    password: string;
+  }
+   
+  export type RegisterCredentials = {
     username: string;
     password: string;
-    email: string;  
+    email: string;
   }

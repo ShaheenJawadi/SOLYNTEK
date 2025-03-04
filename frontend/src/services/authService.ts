@@ -1,13 +1,11 @@
 import { apiService } from '../api/axios';
-import { registerPayload } from '../types/auth.type';
-import { setToken } from '../utils/token';
+import { RegisterCredentials,LoginCredentials, User } from '../types/auth.type';
  
-export const login = async (username: string, password: string) => {
-  const response = await apiService.post<{ access_token: string }>('/auth/login', { username, password });
-  setToken( response.access_token); 
-  return response.access_token;
+export const login = async (data: LoginCredentials) => {
+  const response = await apiService.post<{ access_token: string,user:User }>('/auth/login', data);
+  return response;
 };
-export const register = async (data: registerPayload) => {
+export const register = async (data: RegisterCredentials) => {
   const response = await apiService.post('/auth/register', data);
   return response;
 };
