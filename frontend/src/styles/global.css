@@ -263,8 +263,18 @@ input, textarea, select, button {
 
 .filter_page_holder .left_side .tit {
 color: var(--primary-color);
+padding-left: 10px;
+position: relative; 
 }
-
+.filter_page_holder .left_side .tit::before{
+  content: '';
+  position: absolute; 
+  background: var(--secondary-color);
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+}
 .filter_page_holder .right_side  {
   display: flex;
 flex-direction: column;
