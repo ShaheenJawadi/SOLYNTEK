@@ -5,9 +5,7 @@ import {
   faHeart,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
-import { 
-  faHeart as faHeartRegular
-} from "@fortawesome/free-regular-svg-icons";  
+import { faHeart as faHeartRegular } from "@fortawesome/free-regular-svg-icons";
 import React from "react";
 import InputField from "../components/elements/input";
 import SelectField from "../components/elements/select";
@@ -19,28 +17,40 @@ const Home: React.FC = () => {
       <div className="container">
         <div className="row">
           <div className="col-3 left_side">
-            <div className="categories_box">
+            <div className="sec1">
               <div className="tit">
-                <h2>Categories</h2>
+                <h3>Category</h3>
               </div>
 
-              <ul>
-                <li>cat 1</li>
-                <li>cat 2</li>
-                <li>cat 3</li>
-                <li>cat 4</li>
+              <ul className="categories_list">
+                <li className="single_cat  active ">All</li>
+                <li className="single_cat  ">cat 1</li>
+                <li className="single_cat  ">cat 2</li>
+                <li className="single_cat  ">cat 3</li>
+                <li className="single_cat  ">cat 4</li>
               </ul>
             </div>
 
-            <div className="categories_box">
+            <div className="sec2 form_holder">
               <div className="tit">
-                <h2>Order By</h2>
+                <h3>Order By</h3>
               </div>
-
-              <ul>
-                <li> 1</li>
-                <li> 2</li>
-              </ul>
+              <SelectField
+                options={[
+                  { value: "10", label: "price asc" },
+                  { value: "20", label: "price desc" },
+                ]}
+              />
+              <div></div>
+            </div>
+            <div className="sec3">
+              <div className="tit">
+                <h3>Display Only Favorites</h3>
+              </div>
+              <div className="yn">
+                <div className="btn yes active">Yes</div>
+                <div className="btn no ">No</div>
+              </div>
             </div>
           </div>
 
@@ -76,45 +86,43 @@ const Home: React.FC = () => {
               </div>
             </div>
             <div className="products_list">
-            <div className="row">
-              {
-                Array.from({ length: 10 }).map((_, i) => (
+              <div className="row">
+                {Array.from({ length: 4 }).map((_, i) => (
                   <div className="col-4">
-                  <div className="single_prod"  > 
-                    <div className="prod_img" >
-                      <img src="https://placehold.co/400" alt="prod" />
-                    </div>
-                    <div className="prod_info">
-                    <div className="sec1">
-                      <div className="category">sqsdqsd</div>
-                      <div className="price">10 TND</div>
-  
-                    </div>
-                    <div className="sec2"  >
-                      <div className="title">prod name</div>
-                      <div className="description">prod description</div>
-                    </div>
-                    <div className="sec3" >
-                      <div className="fav"><FontAwesomeIcon icon={faHeart} /></div> 
-                     {/*  <div className="fav"><FontAwesomeIcon icon={faHeartRegular} /></div>  */}
-  
-                  
-                    </div>
+                    <div className="single_prod">
+                      <div className="prod_img">
+                        <img src="https://placehold.co/400" alt="prod" />
+                      </div>
+                      <div className="prod_info">
+                        <div className="sec1">
+                          <div className="category">sqsdqsd</div>
+                          <div className="price">10 TND</div>
+                        </div>
+                        <div className="sec2">
+                          <div className="title">prod name</div>
+                          <div className="description">prod description</div>
+                        </div>
+                        <div className="sec3">
+                          <div className="fav">
+                            <FontAwesomeIcon icon={faHeart} />
+                          </div>
+                          {/*  <div className="fav"><FontAwesomeIcon icon={faHeartRegular} /></div>  */}
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                  ))
-              }
-             
-             
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <Pagination
+                currentPage={1}
+                totalPages={10}
+                onPageChange={() => null}
+              />
             </div>
           </div>
-
-          <div>
-          <Pagination currentPage={1} totalPages={10} onPageChange={()=>null} />
-          </div>
-          </div>
-      
         </div>
       </div>
     </div>

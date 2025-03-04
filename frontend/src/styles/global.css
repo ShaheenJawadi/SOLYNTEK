@@ -239,8 +239,31 @@ input, textarea, select, button {
 .filter_page_holder .left_side{
  border-right: 1px solid var(--primary-color);
  padding: 15px;
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
 }
 
+
+.filter_page_holder .left_side  .categories_list{
+ padding-left: 15px;
+}
+.filter_page_holder .left_side  .categories_list .single_cat {
+ cursor: pointer;
+  color: #4f4f4f;
+  font-size: 16px;
+  font-weight: 600;
+}
+.filter_page_holder .left_side  .categories_list .single_cat:hover{
+  color: var(--primary-color) ;
+}
+.filter_page_holder .left_side  .categories_list .single_cat.active{
+  color: var(--secondary-color);
+}
+
+.filter_page_holder .left_side .tit {
+color: var(--primary-color);
+}
 
 .filter_page_holder .right_side  {
   display: flex;
