@@ -178,6 +178,13 @@ input, textarea, select, button {
   color: red;
   font-size: 12px;
 }
+
+
+
+
+
+
+
 /* 
 //////////////////////////////////////// */
 
@@ -237,6 +244,26 @@ gap: 5px;
 }
 
 
+
+
+.form_holder.search_section{
+  position: relative;  
+}
+.form_holder.search_section .input_container input{
+  padding-right: 40px;
+
+border-radius: 100px;
+}
+
+.form_holder.search_section .search_btn{
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: var(--secondary-color);
+  cursor: pointer;
+}
 
 
 

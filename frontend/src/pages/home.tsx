@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faGrip } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faGrip, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import InputField from "../components/elements/input";
 
@@ -45,7 +45,17 @@ const Home: React.FC = () => {
                 </div>
               </div>
 
-              <div className="search_section"> </div>
+              <div className="search_section form_holder">
+
+                <InputField placeholder="Search..." />
+                <div className="search_btn">
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
+                </div>
+                
+                
+                
+
+                 </div>
               <div className="prod_by_page">prod by page</div>
             </div>
           </div>
