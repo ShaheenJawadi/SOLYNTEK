@@ -315,7 +315,19 @@ border-radius: 100px;
 
 
 
-
+.filter_page_holder .right_side .top_section  .prod_by_page{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #4f4f4f;
+  font-weight: 600;
+  flex-direction: row;
+}
+.filter_page_holder .right_side .top_section  .prod_by_page.form_holder .select_container{
+  max-width: 60px;
+}
 
 .filter_page_holder .right_side  .products_list{
   min-height: 400px;
