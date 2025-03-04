@@ -2,11 +2,12 @@ import { RouteObject } from "react-router-dom";
 import GuardRoute from "./guard";
 import Login from "../pages/login";
 import Register from "../pages/register";
+import Home from "../pages/home";
 
 export const routes: RouteObject[] = [
   {
     path: "/",
-    element: <div>Home</div> ,
+    element: <Home/> ,
   },
   {
     path: "/login",
