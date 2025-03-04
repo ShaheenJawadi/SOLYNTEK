@@ -48,8 +48,8 @@ const Home: React.FC = () => {
                 <h3>Display Only Favorites</h3>
               </div>
               <div className="yn">
-                <div className="btn yes active">Yes</div>
-                <div className="btn no ">No</div>
+                <div className="btn yes ">Yes</div>
+                <div className="btn no active">No</div>
               </div>
             </div>
           </div>
