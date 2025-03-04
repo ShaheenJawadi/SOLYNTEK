@@ -185,6 +185,54 @@ input, textarea, select, button {
 
 
 
+
+
+
+
+
+.form_holder .select_container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form_holder  .select_label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form_holder  .select_field {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  outline: none;
+  background-color: white;
+  appearance: none;  
+  cursor: pointer;
+}
+
+.form_holder  .select_field:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.form_holder  .select_error {
+  border-color: red;
+}
+
+.form_holder  .select_error:focus {
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+ 
+
+
+
+
 /* 
 //////////////////////////////////////// */
 
