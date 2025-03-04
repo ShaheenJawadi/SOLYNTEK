@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
   faGrip,
+  faHeart,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
@@ -72,7 +73,29 @@ const Home: React.FC = () => {
             </div>
             <div className="products_list">
             <div className="row">
-              <div className="col-4">prod</div>
+              <div className="col-4">
+                <div className="single_prod"  > 
+                  <div className="prod_img" >
+                    <img src="https://placehold.co/400" alt="prod" />
+                  </div>
+                  <div className="prod_info">
+                  <div className="t">
+                    <div className="category">sqsdqsd</div>
+                    <div className="price">10TND</div>
+
+                  </div>
+                  <div className="m"  >
+                    <h3>prod name</h3>
+                    <p>prod description</p>
+                  </div>
+                  <div className="b" >
+                    <div><FontAwesomeIcon icon={faHeart} /></div> 
+
+                
+                  </div>
+                  </div>
+                </div>
+              </div>
               <div className="col-4">prod</div>
               <div className="col-4">prod</div>
               <div className="col-4">prod</div>
