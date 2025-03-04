@@ -9,3 +9,9 @@ export const register = async (data: RegisterCredentials) => {
   const response = await apiService.post('/auth/register', data);
   return response;
 };
+
+
+export const getCurrentUser = async () => {
+  const response = await apiService.get('/auth/me');
+  return response;
+};

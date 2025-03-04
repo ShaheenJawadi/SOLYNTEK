@@ -36,6 +36,20 @@ export const register = createAsyncThunk(
   }
 );
 
+
+export const checkAuth = createAsyncThunk(
+  'auth/checkAuth',
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await authApi.getCurrentUser();
+      return response;
+    } catch (error: any) {
+      return rejectWithValue(error.message || 'Authentication check failed');
+    }
+  }
+);
+
+
 const authSlice = createSlice({
   name: 'auth',
   initialState,
