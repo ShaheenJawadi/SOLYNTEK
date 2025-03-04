@@ -76,33 +76,36 @@ const Home: React.FC = () => {
             </div>
             <div className="products_list">
             <div className="row">
-              <div className="col-4">
-                <div className="single_prod"  > 
-                  <div className="prod_img" >
-                    <img src="https://placehold.co/400" alt="prod" />
-                  </div>
-                  <div className="prod_info">
-                  <div className="sec1">
-                    <div className="category">sqsdqsd</div>
-                    <div className="price">10 TND</div>
-
-                  </div>
-                  <div className="sec2"  >
-                    <div className="title">prod name</div>
-                    <div className="description">prod description</div>
-                  </div>
-                  <div className="sec3" >
-                    <div className="fav"><FontAwesomeIcon icon={faHeart} /></div> 
-                   {/*  <div className="fav"><FontAwesomeIcon icon={faHeartRegular} /></div>  */}
-
-                
-                  </div>
+              {
+                Array.from({ length: 10 }).map((_, i) => (
+                  <div className="col-4">
+                  <div className="single_prod"  > 
+                    <div className="prod_img" >
+                      <img src="https://placehold.co/400" alt="prod" />
+                    </div>
+                    <div className="prod_info">
+                    <div className="sec1">
+                      <div className="category">sqsdqsd</div>
+                      <div className="price">10 TND</div>
+  
+                    </div>
+                    <div className="sec2"  >
+                      <div className="title">prod name</div>
+                      <div className="description">prod description</div>
+                    </div>
+                    <div className="sec3" >
+                      <div className="fav"><FontAwesomeIcon icon={faHeart} /></div> 
+                     {/*  <div className="fav"><FontAwesomeIcon icon={faHeartRegular} /></div>  */}
+  
+                  
+                    </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="col-4">prod</div>
-              <div className="col-4">prod</div>
-              <div className="col-4">prod</div>
+                  ))
+              }
+             
+             
             </div>
           </div>
           </div>
