@@ -5,6 +5,9 @@ import {
   faHeart,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
+import { 
+  faHeart as faHeartRegular
+} from "@fortawesome/free-regular-svg-icons";  
 import React from "react";
 import InputField from "../components/elements/input";
 import SelectField from "../components/elements/select";
@@ -79,17 +82,18 @@ const Home: React.FC = () => {
                     <img src="https://placehold.co/400" alt="prod" />
                   </div>
                   <div className="prod_info">
-                  <div className="t">
+                  <div className="sec1">
                     <div className="category">sqsdqsd</div>
-                    <div className="price">10TND</div>
+                    <div className="price">10 TND</div>
 
                   </div>
-                  <div className="m"  >
-                    <h3>prod name</h3>
-                    <p>prod description</p>
+                  <div className="sec2"  >
+                    <div className="title">prod name</div>
+                    <div className="description">prod description</div>
                   </div>
-                  <div className="b" >
-                    <div><FontAwesomeIcon icon={faHeart} /></div> 
+                  <div className="sec3" >
+                    <div className="fav"><FontAwesomeIcon icon={faHeart} /></div> 
+                   {/*  <div className="fav"><FontAwesomeIcon icon={faHeartRegular} /></div>  */}
 
                 
                   </div>
