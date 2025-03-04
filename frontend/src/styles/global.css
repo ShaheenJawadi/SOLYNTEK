@@ -88,7 +88,7 @@ input, textarea, select, button {
   margin-bottom: 25px;
 } 
 .header .logo img{
-  height: 60px;
+  height: 50px;
 }
 .header .header_menu{
   display: flex;
@@ -103,7 +103,7 @@ input, textarea, select, button {
 }
 .header .header_menu ul li {
  color: #4f4f4f;
- font-weight: 17px;
+ font-size: 15px;
  font-weight: 600;
  cursor: pointer;
 }
@@ -113,7 +113,7 @@ input, textarea, select, button {
 }
 .header .auth_btns .btn{ 
   padding: 8px 20px;
-  font-size: 18px;
+  font-size: 15px;
   background-color: var(--secondary-color);
   color: #fff;
   border: none;
